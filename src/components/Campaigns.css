@@ -1,0 +1,98 @@
+.campaigns--container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.campaignsColumn {
+  flex: 1;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset -5px 0 5px rgba(150, 150, 150, 0.5);
+  text-align: center;
+}
+
+.newCampaign--button {
+  margin-bottom: 10px;
+}
+
+.campaignItem {
+  display: flex;
+  flex-direction: row;
+}
+
+.campaignItem--title {
+  background-color: lightblue;
+  flex: 5;
+}
+
+.deleteButton {
+  background-color: red;
+  flex: 1;
+}
+
+.campaigns--columnOne {
+  flex: 3;
+  background-color: pink;
+  text-align: center;
+}
+
+.campaigns--columnTwo {
+  background-color: aqua;
+  flex: 3;
+  text-align: center;
+}
+
+.campaignsList--header {
+  margin: 10px 0 10px 0;
+}
+
+.header {
+  text-decoration: underline;
+}
+
+.timesAndRecipients {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.times {
+  flex: 1;
+}
+
+.recipients {
+  flex: 1;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+}
+
+.button1 {
+  display: block;
+  margin-left: auto;
+  margin-right: 5px;
+  width: 100px;
+}
+
+.button2 {
+  margin-left: 5px;
+  display: block;
+  margin-right: auto;
+  width: 100px;
+}
+
+.button3 {
+  width: 100px;
+}
+
+.columnOne--header {
+  margin-bottom: 10px;
+}
+
+.conditionalMessage {
+  flex: 4;
+  text-align: center;
+}

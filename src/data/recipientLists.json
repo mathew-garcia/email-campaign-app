@@ -1,0 +1,14 @@
+{
+    "lists": [
+        {
+            "id": 1,
+            "name": "List 1",
+            "recipients": ["mathewegarcia@gmail.com"]
+        },
+        {
+            "id": 2,
+            "name": "List 2",
+            "recipients": ["mathew.garcia.cohort231@gmail.com"]
+        }
+    ]
+}
