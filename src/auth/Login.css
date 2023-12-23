@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.loginWindow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 300px;
+  width: 400px;
+  background-color: aqua;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginForm label {
+  margin-top: 20px;
+}
+
+.loginForm button {
+  margin-top: 20px;
+  height: 40px;
+  width: 60px;
+}
+
+.errorMessage {
+  border: 1px solid red;
+  padding: 10px;
+}

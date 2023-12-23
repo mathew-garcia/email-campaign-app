@@ -7,33 +7,64 @@
 .campaignsColumn {
   flex: 1;
   background-color: rgb(255, 255, 255);
-  box-shadow: inset -5px 0 5px rgba(150, 150, 150, 0.5);
   text-align: center;
 }
 
 .newCampaign--button {
   margin-bottom: 10px;
+  background-color: #15144b;
+  color: white;
 }
 
 .campaignItem {
-  display: flex;
-  flex-direction: row;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.campaignItem.selected .campaignItem--title {
+  color: yellow;
+}
+
+.campaignItem--title,
+.deleteButton {
+  display: inline-block;
+  padding: 3px;
+  margin: 0px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.campaignItem--title p,
+.deleteButton p {
+  margin: 0; /* Reset margin for p elements */
 }
 
 .campaignItem--title {
-  background-color: lightblue;
-  flex: 5;
+  background-color: #15144b;
+  color: white;
 }
 
 .deleteButton {
   background-color: red;
-  flex: 1;
+  color: white;
 }
 
 .campaigns--columnOne {
+  color: #15144b;
   flex: 3;
-  background-color: pink;
+  background-color: white;
   text-align: center;
+  box-shadow: inset 5px 0 4px rgba(204, 204, 204, 0.5);
+}
+
+.timeButton {
+  background-color: #15144b;
+  color: #ffe500;
 }
 
 .campaigns--columnTwo {
@@ -43,11 +74,22 @@
 }
 
 .campaignsList--header {
+  color: #15144b;
   margin: 10px 0 10px 0;
 }
 
 .header {
   text-decoration: underline;
+}
+
+.inputField {
+  box-sizing: border-box;
+  width: calc(50% - 20px);
+}
+
+.selectTemplate {
+  box-sizing: border-box;
+  width: calc(50% - 20px);
 }
 
 .timesAndRecipients {
@@ -70,7 +112,14 @@
   margin-bottom: 8px;
 }
 
+button {
+  border-radius: 3px;
+  cursor: pointer;
+}
+
 .button1 {
+  background-color: #15144b;
+  color: white;
   display: block;
   margin-left: auto;
   margin-right: 5px;
@@ -78,6 +127,8 @@
 }
 
 .button2 {
+  background-color: #15144b;
+  color: white;
   margin-left: 5px;
   display: block;
   margin-right: auto;
@@ -85,6 +136,8 @@
 }
 
 .button3 {
+  background-color: #15144b;
+  color: #ffe500;
   width: 100px;
 }
 

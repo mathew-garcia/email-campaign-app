@@ -46,11 +46,17 @@ function Campaigns() {
     function handleAddTimeDate() {
         if (timeDateField.date && timeDateField.time) {
             setCampaignsData((prevCampaignsData) => {
-                const updatedCampaignsData = [...prevCampaignsData]
-                updatedCampaignsData[selectedCampaignIndex].dateTime.push({
-                    date: timeDateField.date,
-                    time: timeDateField.time
-                })
+                const updatedCampaignsData = [...prevCampaignsData];
+                updatedCampaignsData[selectedCampaignIndex] = {
+                    ...updatedCampaignsData[selectedCampaignIndex],
+                    dateTime: [
+                        ...updatedCampaignsData[selectedCampaignIndex].dateTime,
+                        {
+                            date: timeDateField.date,
+                            time:timeDateField.time,
+                        },
+                    ],
+                }
                 return updatedCampaignsData
             })
         }
@@ -88,15 +94,15 @@ function Campaigns() {
         <main className='campaigns--container'>
             <div className='campaignsColumn'>
                 <h4 className='campaignsList--header header'>Active Campaigns</h4>
-                <button className='newCampaign--button' onClick={handleNewCampaign}>New Campaign+</button>
+                <button className='newCampaign--button' onClick={handleNewCampaign}>New Campaign +</button>
                 <div className='campaignsList'>
                     {campaignsData.map((campaign, index) =>
                         <div 
                             key={index} 
-                            className='campaignItem'
+                            className={`campaignItem ${selectedCampaignIndex === index ? 'selected' : ''}`}
                             onClick={() => handleCampaignClick(index)}
                         >
-                            <div className='campaignItem--title'>
+                            <div className={`campaignItem--title ${selectedCampaignIndex === index ? 'selected' : ''}`}>
                                 <p>Campaign {index+1}</p>
                             </div>
                             <div className='deleteButton' onClick={() => handleDeleteCampaign(index)}>
@@ -115,18 +121,21 @@ function Campaigns() {
                         <h2 className='header'>Campaign {selectedCampaignIndex + 1}</h2>
                         <h4 className='columnOne--header header'>Sender Email</h4>
                         <input
+                            className='inputField'
                             type='email'
                             name='sender'
                             value={campaignsData[selectedCampaignIndex]?.sender}
                             onChange={(event) => handleChange(event, selectedCampaignIndex)} />
                         <h4 className='columnOne--header header'>Subject Line</h4>
                         <input
+                            className='inputField'
                             type='text'
                             name='subject'
                             value={campaignsData[selectedCampaignIndex]?.subject}
                             onChange={(event) => handleChange(event, selectedCampaignIndex)} />
                         <h4 className='columnOne--header header'>Template Selection</h4>
                         <select
+                            className='selectTemplate'
                             name='template'
                             value={campaignsData[selectedCampaignIndex]?.template}
                             onChange={(event) => handleChange(event, selectedCampaignIndex)}
@@ -147,7 +156,7 @@ function Campaigns() {
                                     name='time'
                                     value={timeDateField.time}
                                     onChange={handleTimeDateChange} />
-                                <button onClick={handleAddTimeDate}>+</button>
+                                <button className='timeButton' onClick={handleAddTimeDate}>+</button>
                                 <div className='timesList'>
                                     {campaignsData[selectedCampaignIndex]?.dateTime.map((dateTime, index) => <div
                                         className='timeDate--item'
