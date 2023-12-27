@@ -1,9 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState}  from 'react'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { jwtDecode } from 'jwt-decode'
 import './Login.css'
 
 function Login () {
+    const navigate = useNavigate();
+
     const [loginError, setLoginError] = useState(false);
 
     const [userInput, setUserInput] = useState({
@@ -27,7 +30,11 @@ function Login () {
             return;
         }
 
-        setLoginError(false);
+        //simulates login, will implement real authentication later
+        setTimeout(() => {
+            setLoginError(false);
+            navigate('/campaigns')
+        }, 1000);
         
         console.log({ userInput })
     }
