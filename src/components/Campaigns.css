@@ -68,9 +68,20 @@
 }
 
 .campaigns--columnTwo {
-  background-color: aqua;
+  background-color: White;
   flex: 3;
   text-align: center;
+}
+
+.email-preview--container {
+  height: 50%;
+  width: 90%;
+}
+
+.email-preview {
+  border: #15144b solid;
+  height: 100%;
+  width: 100%;
 }
 
 .campaignsList--header {
@@ -80,6 +91,7 @@
 
 .header {
   text-decoration: underline;
+  color: #15144b;
 }
 
 .inputField {

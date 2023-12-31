@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import './Campaigns.css'
+import EmailPreview from './EmailPreview'
 import recipientLists from '../data/recipientLists.json';
+import emailTemplates from '../data/emailTemplates.json';
 
 
 
@@ -15,6 +17,7 @@ function Campaigns() {
     }
     
     const [campaignsData, setCampaignsData] = useState([]);
+    // currently selected campaign -- used in every onChange event handler as a parameter for handleChange function
     const [selectedCampaignIndex, setSelectedCampaignIndex] = useState(0)
     const [timeDateField, setTimeDateField] = useState({
         date: "",
@@ -22,6 +25,7 @@ function Campaigns() {
     })
     const [recipientData, setRecipientData] = useState(recipientLists.lists);
     const [selectedLists, setSelectedLists] = useState([]);
+    const [emailTemplatesData, setEmailTemplatesData] = useState(emailTemplates.emails);
 
     function handleChange(event, index) {
         const {name, value} = event.target
@@ -140,8 +144,12 @@ function Campaigns() {
                             value={campaignsData[selectedCampaignIndex]?.template}
                             onChange={(event) => handleChange(event, selectedCampaignIndex)}
                         >
-                            <option>option 1</option>
-                            <option>option 2</option>
+                            <option value="">--Choose a template--</option>
+                            {emailTemplatesData.map((template) => (
+                                <option key={template.id} value={template.id}>
+                                    {template.templateName}
+                                </option>
+                            ))}
                         </select>
                         <div className='timesAndRecipients'>
                             <div className='times'>
@@ -191,7 +199,9 @@ function Campaigns() {
                             <button className='button1'>Activate</button><button className='button2'>Save as Draft</button>
                         </div>
                         <button className='button3'>Force Send</button>
-                    </div><div className='campaigns--columnTwo'>
+                    </div>
+                <div className='campaigns--columnTwo'>
+                    <EmailPreview selectedTemplate={emailTemplatesData[selectedCampaignIndex]} />
                 </div></>
             )}
         </main>

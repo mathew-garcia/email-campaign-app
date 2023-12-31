@@ -1,0 +1,25 @@
+{
+    "emails": [
+        {
+            "id": "1",
+            "templateName": "exclusive discount",
+            "html": "<p>Welcome! Enjoy an exclusive discount on your next purchase. Use code WELCOME10 at checkout.</p>",
+            "buttonText": "Shop Now",
+            "buttonLink": "https://example.com/shop-now"
+          },
+          {
+            "id": "2",
+            "templateName": "flash sale",
+            "html": "<p>Don't miss out on our flash sale! Shop now and save big on selected items.</p>",
+            "buttonText": "View Deals",
+            "buttonLink": "https://example.com/view-deals"
+          },
+          {
+            "id": "3",
+            "templateName": "latest collection",
+            "html": "<p>Be the first to explore our latest collection. Preview the styles and trends before anyone else.</p>",
+            "buttonText": "Discover Now",
+            "buttonLink": "https://example.com/discover-now"
+          }
+    ]
+}
