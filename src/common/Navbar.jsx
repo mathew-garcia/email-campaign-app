@@ -9,7 +9,7 @@ function Navbar() {
     return (
         <nav className='navbar'>
             <div className='logo'>
-                <h2>SuperSend<i class="fa-solid fa-truck-fast"></i></h2>
+                <h2>SuperSend<i className="fa-solid fa-truck-fast"></i></h2>
             </div>
             <ul className='links'>
                 <li

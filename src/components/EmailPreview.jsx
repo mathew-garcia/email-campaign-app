@@ -8,7 +8,6 @@ const EmailPreview = ({ selectedTemplate }) => {
 
   return (
     <div className="email-preview">
-      <h2>Email Preview</h2>
       <div dangerouslySetInnerHTML={{ __html: selectedTemplate.html }} />
     </div>
   );

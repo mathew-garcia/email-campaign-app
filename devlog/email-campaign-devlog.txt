@@ -1,0 +1,99 @@
+9/26/23
+11:30am-1:25pm
+-Researching React project ideas and options of react components
+
+9/27/23
+1:00pm-1:40pm
+-Researching technologies required for project, assessing difficult to achieve end goal
+3:40pm-4:57pm
+-Reading through google workspace/gmail api 
+-Researching Oauth2 for login
+
+9/28/23
+12:53pm-2:15pm
+-Crafting UI design of campaigns page/component
+11:50pm-1:02am
+-Working on wireframe and brainstorming for Campaigns page/component
+
+9/29/23
+1:12pm-1:55pm
+-Finish wireframes for campaign page
+3:12pm-5:12pm
+-Setting up React app/boilerplate code and started React/css code of basic layout and elements
+
+9/30/23
+7:25pm-8:02pm
+-Researching some serverless solutions
+-Researching how to set up architecture of project
+-Continue working on basic UI/elements
+
+10/03/23
+12:13am-2:13am
+-Added state to campaigns jsx code
+-updated handleChange function and states to handle an array of objects so it can handle an independent dataset for multiple campaigns
+
+10/07/23
+1:25am-3:30am
+-Set up individual states for each campaign
+-Set up creation of new divs when clicking New Campaign+ button, troubleshooting
+1:25pm-3:25pm
+-Set up new time and date states and functions to ubdate time and date array for specified campaign
+-Rewrote data structure
+
+11/09/23
+5:07pm-6:25pm
+-Created data file for 'Recipient Lists' and created useState(s) for holding of imported data and changing of selected lists.
+-Created method and forms for populating 'Recipient' data onto UI.
+
+*17.27 hours so far, 1036 minutes
+
+11/10/23
+4:08am-5:47am
+-Worked on oauth2 for eventual implementation into codebase
+
+11/25/23
+7:39am-8:41am
+-Finished setting up and troubleshooting oauth2 w/ google
+10:01pm-10:56pm
+-Coded basic navbar 
+
+11/26/23
+8:31am-8:52am
+-Troubleshooting vulnerabilities/dependencies
+
+11/28/23
+3:19pm-4:25pm
+-Troubleshooting node/dependencies and pushing to GitHub
+-Understanding version control
+
+11/29/23
+4:28pm-5:30pm
+-Planning structure and login of jwt/auth and login
+-Exploring react context
+
+12/14/23
+12:42pm-3:10pm
+-Refined states to fix double entries on time/date
+-Styled and refined CSS
+
+*ADD 7.63 Hours, 458 minutes = 24.9 Hours, 1494 minutes
+
+12/23/23
+12:10am-2:22am
+-Created basic login page with form submisson logic, some basic styling
+
+12/26/23
+4:15pm-5:56pm
+learned and implemented react-router-dom
+
+12/30/23
+3:00pm-4:30pm
+-Exlploring other options for email such as Resend, EmailJS and SendGrid. Settled on still using Oauth2 and GMail API for streamlining ease for test users.
+4:50pm-7:30pm
+-Coding in some test emails, mapping them based on ID to 'select options', and created EmailPreview.jsx component for rendering in Campaigns.jsx. 
+-Troubleshooting problems with rendering in the selected template for the currently selected campaign, still needs more work.
+
+02/09/23
+9:20pm-11:30pm
+-Troubleshooting email preview, finding method to display the selected template - extracted the template id from 'campaignsData[selectedCampaignIndex]?.template' and used the .find method to match it up with the id of the template selected for.
+-Updated the 'RecipientLists' checkboxes to update for each campaign individually, I will use this to extract the email addresses from my recipientLists.json at a future date when I implement GMail API.

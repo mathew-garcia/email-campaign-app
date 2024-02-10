@@ -13,7 +13,7 @@ function Campaigns() {
         subject: "",
         template: "",
         dateTime: [],
-        recipients: ""
+        recipients: []
     }
     
     const [campaignsData, setCampaignsData] = useState([]);
@@ -24,11 +24,16 @@ function Campaigns() {
         time: ""
     })
     const [recipientData, setRecipientData] = useState(recipientLists.lists);
-    const [selectedLists, setSelectedLists] = useState([]);
     const [emailTemplatesData, setEmailTemplatesData] = useState(emailTemplates.emails);
+    // selects the email template from emailTemplatesData
+    const selectedTemplateId = campaignsData[selectedCampaignIndex]?.template;
+    const selectedTemplate = emailTemplatesData.find(template => template.id === selectedTemplateId);
 
     function handleChange(event, index) {
         const {name, value} = event.target
+        
+        console.log("Campaigns Data", campaignsData);
+
         setCampaignsData(prevCampaignsData => {
             let updatedCampaignsData = [...prevCampaignsData]
             updatedCampaignsData[index] = {
@@ -67,14 +72,23 @@ function Campaigns() {
     }
 
     const handleCheckboxChange = (listId) => {
-        setSelectedLists((prevSelectedLists) => {
-            if (prevSelectedLists.includes(listId)) {
-                return prevSelectedLists.filter((id) => id !== listId)
-            }   else {
-                return [...prevSelectedLists, listId]
-            }
-        })
-    }
+        setCampaignsData((prevCampaignsData) => {
+            return prevCampaignsData.map((campaign, index) => {
+                if (index === selectedCampaignIndex) {
+                    const updatedRecipients = campaign.recipients.includes(listId)
+                        ? campaign.recipients.filter(id => id !== listId)
+                        : [...campaign.recipients, listId];
+    
+                    return {
+                        ...campaign,
+                        recipients: updatedRecipients
+                    };
+                }
+                return campaign;
+            });
+        });
+    };
+    
 
     function handleNewCampaign() {
         setCampaignsData((prevCampaignsData) => {
@@ -185,7 +199,7 @@ function Campaigns() {
                                                 <input
                                                     type="checkbox"
                                                     value={list.id}
-                                                    checked={selectedLists.includes(list.id)}
+                                                    checked={campaignsData[selectedCampaignIndex]?.recipients.includes(list.id)}
                                                     onChange={() => handleCheckboxChange(list.id)}
                                                 />
                                                 {list.name}
@@ -194,6 +208,7 @@ function Campaigns() {
                                     )}
                                 </form>
                             </div>
+
                         </div>
                         <div className='buttonsContainer'>
                             <button className='button1'>Activate</button><button className='button2'>Save as Draft</button>
@@ -201,7 +216,8 @@ function Campaigns() {
                         <button className='button3'>Force Send</button>
                     </div>
                 <div className='campaigns--columnTwo'>
-                    <EmailPreview selectedTemplate={emailTemplatesData[selectedCampaignIndex]} />
+                    <h2>Email Preview</h2>
+                    <EmailPreview selectedTemplate={selectedTemplate} />
                 </div></>
             )}
         </main>
